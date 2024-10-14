@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const signup_controller_1 = require("../controllers/signup.controller");
+const signin_controller_1 = require("../controllers/signin.controller");
+const getAllTodos_controller_1 = require("../controllers/getAllTodos.controller");
+const auth_middleware_1 = require("../middlewares/auth.middleware");
+const addTodo_controller_1 = require("../controllers/addTodo.controller");
+const updateTodo_controller_1 = require("../controllers/updateTodo.controller");
+const router = (0, express_1.Router)();
+router.route('/signup').post(signup_controller_1.signup);
+router.route('/signin').post(signin_controller_1.signin);
+router.route('/addTodo').post(auth_middleware_1.authMiddleware, addTodo_controller_1.addTodo);
+router.route('/getAllTodos').get(auth_middleware_1.authMiddleware, getAllTodos_controller_1.getAllTodos);
+router.route('/updateTodo/:id').post(auth_middleware_1.authMiddleware, updateTodo_controller_1.updateTodo);
+exports.default = router;
