@@ -12,7 +12,7 @@ export const signup = async ({
   lastname,
   password,
 }: sinupProps) => {
-  const response = await axios.post("http://localhost:8000/api/v1/signup", {
+  const response = await axios.post("http://ec2-3-108-237-233.ap-south-1.compute.amazonaws.com:8000/api/v1/signup", {
     firstname,
     lastname,
     email,
