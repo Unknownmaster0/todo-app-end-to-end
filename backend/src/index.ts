@@ -9,7 +9,11 @@ const port = process.env.PORT || 3000;
 // cors policy
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://localhost:5173'],
+    origin: [
+      'http://localhost:5173',
+      'https://localhost:5173',
+      'https://d39arf0204nrm0.cloudfront.net',
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
