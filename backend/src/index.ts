@@ -12,13 +12,15 @@ app.use(
     origin: [
       'http://localhost:5173',
       'https://localhost:5173',
-      'https://d39arf0204nrm0.cloudfront.net',
+      'https://d366zbfwim2g3t.cloudfront.net'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   })
 );
+
+app.options('*', cors()); // Allow preflight requests for all routes
 
 // Add this line to parse JSON requests
 app.use(express.json());
